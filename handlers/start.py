@@ -15,7 +15,6 @@ async def start(message: types.Message):
 async def parser(callback: types.CallbackQuery):
     await callback.answer()
     scrap = Scrapper()
-    scrap.get_page()
-    links = scrap.get_link()
-    for link in links:
+    p_link = await scrap.get_links()
+    for link in p_link:
         await callback.message.answer(link)
