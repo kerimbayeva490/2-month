@@ -25,7 +25,7 @@ def menu_kb():
                 types.KeyboardButton(text="Супы")
             ],
             [
-                types.KeyboardButton(text="Пицца")
+                types.KeyboardButton(text="Пиццы")
             ],
             [
                 types.KeyboardButton(text="Роллы")
