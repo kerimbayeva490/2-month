@@ -12,6 +12,9 @@ def start_kb():
             ],
             [
                 types.InlineKeyboardButton(text='Пройти опросник', callback_data="survey")
+            ],
+            [
+                types.InlineKeyboardButton(text="Парсер", callback_data="parser")
             ]
         ]
     )
