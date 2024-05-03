@@ -7,14 +7,13 @@ from pathlib import Path
 load_dotenv()
 dev = getenv('DEV')
 if not bool(dev):
-        from aiogram.client.session.aiohttp import AiohttpSession
+    from aiogram.client.session.aiohttp import AiohttpSession
 
-        print("Production ready")
-        session = AiohttpSession(proxy=getenv('PROXY'))
-        bot = Bot(token=getenv('BOT_TOKEN'), session=session)
+    print("Production ready")
+    session = AiohttpSession(proxy=getenv('PROXY'))
+    bot = Bot(token=getenv('BOT_TOKEN'), session=session)
 else:
-        print('admin')
-        bot = Bot(token=getenv('BOT_TOKEN'))
+    bot = Bot(token=getenv('BOT_TOKEN'))
 dp = Dispatcher()
 database = Database(Path('__file__').parent / 'db.sqlite')
 
