@@ -1,20 +1,11 @@
 from aiogram import types, Router
 from aiogram.filters import Command
+from keyboards.keyboards import start_kb
 
 start_router = Router()
 
 @start_router.message(Command('start'))
 async def start(message: types.Message):
-    kb = types.InlineKeyboardMarkup(
-        inline_keyboard=[
-            [
-                types.InlineKeyboardButton(text="Наш Инстаграмм", url="https://instagram.com")
-            ],
-            [
-                types.InlineKeyboardButton(text="Наше меню", callback_data="menu")
-            ]
-        ]
-    )
     text = f'Hello {message.from_user.full_name} '
-    await message.answer(text, reply_markup=kb)
+    await message.answer(text, reply_markup=start_kb())
 
